@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
-using static console.ATMSystem;
-using System.Security.Cryptography;
 
 namespace console
 {
@@ -58,7 +56,7 @@ namespace console
                 ulong withdrawed = ulong.Parse(Console.ReadLine());
 
                 ulong remainingMoney = ulong.Parse(cardInfo.cardAmount) - withdrawed;
-                File.WriteAllText("C:\\Users\\Deniz\\Desktop\\apps\\Coding\\frameworkconsole\\console\\card.txt", Convert.ToString(remainingMoney));
+                File.WriteAllText("E:\\basic-atm-system\\BasicATM\\BasicATM\\card.txt", Convert.ToString(remainingMoney));
                 Console.WriteLine($"Here your money... Remaining money is ${remainingMoney}");
 
                 Task.Delay(2000).Wait();
@@ -83,13 +81,15 @@ namespace console
             static void deposit()
             {
                 var cardInfo = new CardInfo();
+                
+
 
                 Console.WriteLine($"${cardInfo.cardAmount} in your bank account");
                 Console.WriteLine("Please enter the amount you want to deposit.(Maximum amount is $5000)");
                 ulong deposited = ulong.Parse(Console.ReadLine());
 
                 ulong totalMoney = ulong.Parse(cardInfo.cardAmount) + deposited;
-                File.WriteAllText("C:\\Users\\Deniz\\Desktop\\apps\\Coding\\frameworkconsole\\console\\card.txt", Convert.ToString(totalMoney));
+                File.WriteAllText("E:\\basic - atm - system\\BasicATM\\BasicATM\\card.txt", Convert.ToString(totalMoney));
                 Console.WriteLine($"Your money is deposited... Total money is ${totalMoney}");
 
                 Task.Delay(2000).Wait();
@@ -139,9 +139,8 @@ namespace console
 
         public class CardInfo
         {
-            public static string card = "C:\\Users\\Deniz\\Desktop\\apps\\Coding\\frameworkconsole\\console\\card.txt";
-
-            public string cardAmount = File.ReadAllText(card);
+            
+            public string cardAmount = File.ReadAllText("E:\\basic - atm - system\\BasicATM\\BasicATM\\card.txt");
 
         }
 
