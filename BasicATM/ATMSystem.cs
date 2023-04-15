@@ -61,7 +61,7 @@ namespace console
 
                 Task.Delay(2000).Wait();
                 Console.WriteLine($"If you want to make this process again press \"w\", if you want to go to menu press any button ");
-                string decision = Console.ReadLine();
+                string? decision = Console.ReadLine();
 
                 Console.Clear();
 
@@ -92,7 +92,7 @@ namespace console
 
                 Task.Delay(2000).Wait();
                 Console.WriteLine($"If you want to make this process again press \"d\", if you want to go to menu press any button");
-                string decision = Console.ReadLine();
+                string? decision = Console.ReadLine();
 
                 Console.Clear();
 
@@ -111,7 +111,7 @@ namespace console
                 var cardInfo = new CardInfo();
                 Console.WriteLine($"Your balance is ${cardInfo.cardBalance}");
                 Console.WriteLine("Press \"m\" to go back to menu. ");
-                string back = Console.ReadLine();
+                string? back = Console.ReadLine();
 
                 Console.Clear();
 
