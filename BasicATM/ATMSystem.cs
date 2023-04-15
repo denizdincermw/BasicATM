@@ -141,7 +141,7 @@ namespace console
             public static string[] cardInfos = File.ReadAllLines("E:\\basic - atm - system\\BasicATM\\BasicATM\\card.txt");
             public string cardBalance = cardInfos[0];
             public string cardUserName = cardInfos[1];
-            public string cardUserSurname = cardInfos[2];
+            public string cardUserLastName = cardInfos[2];
             public string cardPass = cardInfos[3];
 
         }
