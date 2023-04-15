@@ -12,7 +12,7 @@ namespace console
     class ATMSystem
     {
 
-        public static void zMain()
+        public static void Main()
         {
             Entrance();
 
