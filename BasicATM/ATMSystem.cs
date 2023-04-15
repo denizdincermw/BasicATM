@@ -12,7 +12,7 @@ namespace console
     class ATMSystem
     {
 
-        public static void Main()
+        public static void zMain()
         {
             Entrance();
 
@@ -51,11 +51,11 @@ namespace console
             {
                 var cardInfo = new CardInfo();
 
-                Console.WriteLine($"${cardInfo.cardAmount} in your bank account");
+                Console.WriteLine($"${cardInfo.cardBalance} in your bank account");
                 Console.WriteLine("Please enter the amount you want to withdraw");
                 ulong withdrawed = ulong.Parse(Console.ReadLine());
 
-                ulong remainingMoney = ulong.Parse(cardInfo.cardAmount) - withdrawed;
+                ulong remainingMoney = ulong.Parse(cardInfo.cardBalance) - withdrawed;
                 File.WriteAllText("E:\\basic-atm-system\\BasicATM\\BasicATM\\card.txt", Convert.ToString(remainingMoney));
                 Console.WriteLine($"Here your money... Remaining money is ${remainingMoney}");
 
@@ -82,13 +82,11 @@ namespace console
             {
                 var cardInfo = new CardInfo();
                 
-
-
-                Console.WriteLine($"${cardInfo.cardAmount} in your bank account");
+                Console.WriteLine($"${cardInfo.cardBalance} in your bank account");
                 Console.WriteLine("Please enter the amount you want to deposit.(Maximum amount is $5000)");
                 ulong deposited = ulong.Parse(Console.ReadLine());
 
-                ulong totalMoney = ulong.Parse(cardInfo.cardAmount) + deposited;
+                ulong totalMoney = ulong.Parse(cardInfo.cardBalance) + deposited;
                 File.WriteAllText("E:\\basic - atm - system\\BasicATM\\BasicATM\\card.txt", Convert.ToString(totalMoney));
                 Console.WriteLine($"Your money is deposited... Total money is ${totalMoney}");
 
@@ -111,7 +109,7 @@ namespace console
             static void balanceInquiry()
             {
                 var cardInfo = new CardInfo();
-                Console.WriteLine($"Your balance is ${cardInfo.cardAmount}");
+                Console.WriteLine($"Your balance is ${cardInfo.cardBalance}");
                 Console.WriteLine("Press \"m\" to go back to menu. ");
                 string back = Console.ReadLine();
 
@@ -140,7 +138,11 @@ namespace console
         public class CardInfo
         {
             
-            public string cardAmount = File.ReadAllText("E:\\basic - atm - system\\BasicATM\\BasicATM\\card.txt");
+            public static string[] cardInfos = File.ReadAllLines("E:\\basic - atm - system\\BasicATM\\BasicATM\\card.txt");
+            public string cardBalance = cardInfos[0];
+            public string cardUserName = cardInfos[1];
+            public string cardUserSurname = cardInfos[2];
+            public string cardPass = cardInfos[3];
 
         }
 
