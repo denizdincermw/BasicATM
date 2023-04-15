@@ -18,6 +18,7 @@ namespace console
 
             static void Entrance()
             {
+                Console.Clear();
                 Console.WriteLine("**************Welcome to XOX Bank*****************");
                 Console.WriteLine("    Please choose your process that you want.     ");
                 Console.WriteLine($"    1) Withdrawal               2) Deposit \n    3) Balance Inquiry          4) Eject card    ");
