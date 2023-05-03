@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace console
+namespace BasicATM
 {
-   
+
     class ATMSystem
     {
 
@@ -70,11 +70,11 @@ namespace console
                 {
                     withdrawal();
                 }
-                else 
+                else
                 {
                     Entrance();
                 }
-                
+
 
                 Console.Clear();
             }
@@ -82,7 +82,7 @@ namespace console
             static void deposit()
             {
                 var cardInfo = new CardInfo();
-                
+
                 Console.WriteLine($"${cardInfo.cardBalance} in your bank account");
                 Console.WriteLine("Please enter the amount you want to deposit.(Maximum amount is $5000)");
                 ulong deposited = ulong.Parse(Console.ReadLine());
@@ -129,7 +129,7 @@ namespace console
                 Environment.Exit(0);
             }
 
-            
+
         }
 
 
@@ -138,7 +138,7 @@ namespace console
 
         public class CardInfo
         {
-            
+
             public static string[] cardInfos = File.ReadAllLines("E:\\basic - atm - system\\BasicATM\\BasicATM\\card.txt");
             public string cardBalance = cardInfos[0];
             public string cardUserName = cardInfos[1];
