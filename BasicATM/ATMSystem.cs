@@ -37,7 +37,7 @@ namespace BasicATM
                         balanceInquiry();
                         break;
                     case 4:
-                        ejectCard();
+                        Environment.Exit(0);
                         break;
                     default:
                         Console.WriteLine("Please enter true option");
@@ -122,13 +122,7 @@ namespace BasicATM
                         Entrance();
                         break;
                 }
-            }
-
-            static void ejectCard()
-            {
-                Environment.Exit(0);
-            }
-
+            }         
 
         }
 
